@@ -3,25 +3,27 @@ package slidingWindow
 func LongestSubstring(s string) int {
 
 	word := map[string]int{}
-	longest := map[string]int{}
 	var exist bool
-	subString := ""
-	point := 0
-	// reset := false
-	for i, v := range s {
+	longest := 0
+	i := 0
+	for j, v := range s {
 		_, exist = word[string(v)]
 
-		if !exist {
-			word[string(v)] = 1
-			longest[string(v)] = 1
-			subString += string(v)
-		} else {
-			word = map[string]int{}
-			delete(longest, string(rune(s[point])))
-			point = i
+		if exist {
+			i = max(word[string(v)], i)
 		}
+		longest = max(longest, j-i+1)
+		word[string(v)] = j + 1
 
 	}
 
-	return len(longest)
+	return longest
+}
+
+func max(a int, b int) int {
+	if a > b {
+		return a
+	} else {
+		return b
+	}
 }
