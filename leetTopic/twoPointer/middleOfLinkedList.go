@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func middleOfLinkedList(head *ListNode) *ListNode {
+func MiddleOfLinkedList(head *ListNode) *ListNode {
 	t := 0
 	arr := [100]ListNode{}
 
