@@ -37,3 +37,10 @@ func TestSortedSquares(t *testing.T) {
 		})
 	}
 }
+
+func BenchmarkSortedSquare(b *testing.B) {
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		SortedSquares([]int{-7, -3, 2, 3, 11})
+	}
+}
