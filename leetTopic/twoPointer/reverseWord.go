@@ -37,7 +37,6 @@ func ReverseWord(s string) string {
 }
 
 //Leetcode Another Attemp solution
-
 func ReverseWords(s string) string {
 	var reverse string
 	var result string
