@@ -35,3 +35,21 @@ func ReverseWord(s string) string {
 	// return string(res)
 
 }
+
+//Leetcode Another Attemp solution
+
+func ReverseWords(s string) string {
+	var reverse string
+	var result string
+
+	for i := len(s) - 1; i >= 0; i-- {
+		if string(s[i]) == " " {
+			result = " " + reverse + result
+			reverse = ""
+			continue
+		}
+		reverse += string(s[i])
+	}
+	result = reverse + result
+	return result
+}
