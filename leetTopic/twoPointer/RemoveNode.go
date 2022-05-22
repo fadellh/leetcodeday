@@ -23,3 +23,25 @@ func RemoveNode(head *ListNode, n int) *ListNode {
 	}
 	return &arr2[0]
 }
+
+func RemoveNthFromEnd(head *ListNode, n int) *ListNode {
+	idx := 0
+	temp := head
+	for temp.Next != nil {
+		temp = temp.Next
+		idx++
+	}
+
+	idx = idx - n
+	i := 0
+	var result ListNode = *head
+	for head != nil {
+		if i == idx {
+			temp = head
+			result.Next = temp
+		}
+		head = head.Next
+		i++
+	}
+	return &result
+}
