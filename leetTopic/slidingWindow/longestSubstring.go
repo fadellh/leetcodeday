@@ -27,3 +27,31 @@ func max(a int, b int) int {
 		return b
 	}
 }
+
+func LengthOfLongestSubstring(s string) int {
+	storage := make(map[rune]string)
+	count := 0
+	tempCount := 0
+	for _, v := range s {
+		if tempCount > count {
+			count = tempCount
+		}
+
+		_, exist := storage[v]
+		if exist {
+			storage = make(map[rune]string)
+			storage[v] = string(v)
+			tempCount = 1
+			continue
+		}
+
+		storage[v] = string(v)
+		tempCount++
+
+	}
+
+	if tempCount > count {
+		count = tempCount
+	}
+	return count
+}
