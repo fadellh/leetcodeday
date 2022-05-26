@@ -60,10 +60,18 @@ func TestCheckInclusion(t *testing.T) {
 			},
 			want: true,
 		},
+		{
+			name: "abc2",
+			args: args{
+				s1: "abc",
+				s2: "ccccbbbbaaaa",
+			},
+			want: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := CheckInclusion(tt.args.s1, tt.args.s2); got != tt.want {
+			if got := CheckInclusionLeet(tt.args.s1, tt.args.s2); got != tt.want {
 				t.Errorf("CheckInclusion() = %v, want %v", got, tt.want)
 			}
 		})
