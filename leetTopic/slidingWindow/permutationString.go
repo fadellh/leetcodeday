@@ -1,5 +1,7 @@
 package slidingWindow
 
+import "fmt"
+
 func CheckInclusion(s1 string, s2 string) bool {
 	words := map[rune]int{}
 
@@ -83,13 +85,27 @@ func CheckInclusionLeet(s1 string, s2 string) bool {
 		s2Map[s2[i]-97]++
 	}
 
-	for i := 0; i < len(s2)-len(s1); i++ {
+	diff := len(s2) - len(s1)
+
+	for i := 0; i < diff; i++ {
 		if matches(s1Map, s2Map) {
 			return true
 		}
 
-		s2Map[s2[i+len(s1)]-97]++
-		s2Map[s2[i]-97]--
+		a := i + len(s1)
+		abjad := s2[a]
+		abjadRemove := s2[i]
+
+		strA := string(abjad)
+		strRem := string(abjadRemove)
+
+		fmt.Println(strA)
+		fmt.Println(strRem)
+		iAbjad := abjad - 97
+		iAbRem := abjadRemove - 97
+
+		s2Map[iAbjad]++
+		s2Map[iAbRem]--
 	}
 	return matches(s1Map, s2Map)
 }
