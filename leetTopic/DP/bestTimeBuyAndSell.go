@@ -1,6 +1,6 @@
 package dp
 
-//LeetCode 121
+//LeetCode 121. Sliding window
 func maxProfit(prices []int) int {
 	bestPrice := prices[0]
 	bestSell := 0
