@@ -1,7 +1,7 @@
 package twopointer_test
 
 import (
-	twopointer "leetcode/leetTopic/twoPointer"
+	twopointer "leetcode/twoPointer"
 	"testing"
 )
 

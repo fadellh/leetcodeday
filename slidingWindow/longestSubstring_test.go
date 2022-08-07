@@ -1,7 +1,7 @@
 package slidingWindow_test
 
 import (
-	sd "leetcode/leetTopic/slidingWindow"
+	sd "leetcode/slidingWindow"
 	"testing"
 )
 
