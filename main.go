@@ -1,7 +1,11 @@
 package main
 
-import linkedlist "leetcode/LinkedList"
+import (
+	"leetcode/tree"
+)
 
 func main() {
-	linkedlist.Implemen()
+	// linkedlist.Implemen()
+	// linkedlist.ImplemenWebHistory()
+	tree.Implemen()
 }

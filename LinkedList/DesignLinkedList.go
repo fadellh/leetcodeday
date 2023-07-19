@@ -15,7 +15,7 @@ type MyLinkedList struct {
 	head *Node
 }
 
-func Constructor() MyLinkedList {
+func Constructors() MyLinkedList {
 	return MyLinkedList{
 		head: nil,
 	}
@@ -141,7 +141,7 @@ func (this *MyLinkedList) PrintIndex() {
 }
 
 func Implemen() {
-	obj := Constructor()
+	obj := Constructors()
 	// obj.AddAtHead(3)
 	// obj.AddAtHead(2)
 	// obj.AddAtHead(1)
